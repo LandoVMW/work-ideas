@@ -199,11 +199,11 @@ Wait a few seconds for the CRDs to be committed in the kube-apiserver before con
 ```
 kubectl create namespace istio-system 
 ```
-4. Deploy Istio to your Smart Cluster.
+3. Deploy Istio to your Smart Cluster.
 ```
 kubectl apply -f yaml/istio.yaml
 ```
-3. Verify that the necessary services are deployed.
+4. Verify that the necessary services are deployed.
 ```
 kubectl get svc -n istio-system
 ```
@@ -223,7 +223,7 @@ prometheus                 ClusterIP      10.0.0.189   <none>             9090/T
 
 ```
 
-4. Verify that the pods are deployed and the containers are up and running.
+5. Verify that the pods are deployed and the containers are up and running.
 ```
 kubectl get pod -n istio-system
 ```
@@ -243,7 +243,7 @@ istio-telemetry-54c4f5cb7-pb65t            2/2       Running     0          5m
 prometheus-76dd6d86b-gxsq7                 1/1       Running     0          5m
 
 ```
-5. You can optionally test your Istio deployment using the bookinfo app, which illustrates many use cases for Istio. For more information, see <https://istio.io/docs/examples/bookinfo/>.
+6. You can optionally test your Istio deployment using the bookinfo app, which illustrates many use cases for Istio. For more information, see <https://istio.io/docs/examples/bookinfo/>.
 
 ---
 ## Step 5: (optional) Install Jaeger
