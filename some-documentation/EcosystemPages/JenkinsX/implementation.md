@@ -1,5 +1,5 @@
-# Implementing Jenkins-X as CI/CD Pipeline in VMware Cloud PKS
-This procedure explains how to configure and install **Jenkins-X** on a new Smart Cluster.
+# Implementing Jenkins X as CI/CD Pipeline in VMware Cloud PKS
+This procedure explains how to configure and install **Jenkins X** on a new Smart Cluster.
 
 ### Before You Begin
 The procedure outlined in this document assumes that you have the following tools installed locally.
@@ -19,9 +19,9 @@ For more information on these steps, see the VMware Cloud PKS documentation at <
 
 ---
 ## Step 1: Set Up Ingress on Your Smart Cluster
-1. Download and install the JX tool, which automates the process of deploying Jenkins-X on a kubernetes cluster.  
+1. Download and install the JX tool, which automates the process of deploying Jenkins X on a kubernetes cluster.  
    Follow the instructions at <https://jenkins-x.io/getting-started/install/>.  
-   **Note:** If you have installed or attempted to install Jenkins-X previously, delete all files in the ```~/.jx``` directory to purge settings from any previous installation.
+   **Note:** If you have installed or attempted to install Jenkins X previously, delete all files in the ```~/.jx``` directory to purge settings from any previous installation.
 
 2. Install the Nginx ingress controller from Kubernetes.  
    Make sure kubectl is configured to connect to your Smart Cluster before you start.
@@ -90,9 +90,9 @@ For more information on these steps, see the VMware Cloud PKS documentation at <
 
 ---
 ## What's Next
-When the installer completes, Jenkins-X CI/CD pipeline is ready to execute jobs. 
+When the installer completes, Jenkins X CI/CD pipeline is ready to execute jobs. 
 
-Jenkins-X includes some quickstart guides for trying out the system. You can execute one of the quickstarts such as the following Go lang quickstart.
+Jenkins X includes some quickstart guides for trying out the system. You can execute one of the quickstarts such as the following Go lang quickstart.
 
 ```
 jx create quickstart -l go
