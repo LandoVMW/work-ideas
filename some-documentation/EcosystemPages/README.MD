@@ -1,5 +1,11 @@
 # Ecosystem Solutions for VMware Cloud PKS
 
+The solutions in this repository explain how to install and use some common tools from the Kubernetes ecosystem on VMware Cloud PKS. Each solution in the table below has its own folder that contains:
+ - a README.MD file that provides a brief overview and the steps to complete the implementation
+ - (if necessary) supporting files like YAMLs, scripts, or other examples 
+
+## Ecosystem Solutions
+
 <table>
  <thead>
   <tr>
@@ -39,13 +45,20 @@
  </tbody>
 </table>
 
-This is the top-level page that introduces what we are doing here, 
-and should also provide info about 
- - how to contribute
- - how to get support 
- - legal / license / user agreement
+## Licenses and Agreements
+ - legal / license / user agreement / etc
 
-Each solution has its own subdirectory that contains:
- - the overview (readme.md)
- - the steps to complete the implementation (implementation.md)
- - supporting files like YAMLs, scripts, or other examples (arranged in subdirectories if necessary)
+## Contributions
+Code of conduct
+and overview of how to contribute
+ - reporting bugs / typos
+ - submitting a solution for my ecosystem product
+ - requesting a solution for a particular ecosystem product
+
+## Support
+ - can I get help if it isn't working for me?
+
+## Resources 
+ - VMware Cloud PKS Documentation: <https://docs.vmware.com/en/VMware-Cloud-PKS/index.html>
+ - VMware Cloud-Native Apps Dev Center: <https://code.vmware.com/web/cloud-native-apps>
+ - Kubernetes Documentation: <https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/>
