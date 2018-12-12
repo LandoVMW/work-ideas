@@ -25,7 +25,8 @@ The solutions in this repository explain how to install and use some common tool
     <a href="/LandoVMW/work-ideas/blob/master/some-documentation/EcosystemPages/JenkinsX">Jenkins X CI/CD pipeline</a></td>
    <td>
     <img src="https://avatars2.githubusercontent.com/u/22035492?s=200&amp;v=4" alt="Heptio icon" width="60" align="center" style="max-width:50%;"> 
-    Contour ingress</td>
+    <a href="/LandoVMW/work-ideas/blob/master/some-documentation/EcosystemPages/Contour">Contour ingress</a></td>
+</td>
   </tr>
   <tr>
    <td>
