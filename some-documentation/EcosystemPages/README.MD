@@ -31,10 +31,10 @@ The solutions in this repository explain how to install and use some common tool
   <tr>
    <td>
     <img src="https://avatars2.githubusercontent.com/u/8629072?s=200&amp;v=4" alt="NGINX icon" width="60" align="center" style="max-width:50%;"> 
-    NGINX ingress (from NGINX)</td>
+    NGINX ingress (NGINX)</td>
    <td>
     <img src="https://avatars3.githubusercontent.com/u/13629408?s=200&amp;v=4" alt="Kubernetes icon" width="60" align="center" style="max-width:50%;"> 
-    NGINX ingress (from Kubernetes)</td>
+    NGINX ingress (Kubernetes)</td>
    <td>
    </td>
   </tr>
