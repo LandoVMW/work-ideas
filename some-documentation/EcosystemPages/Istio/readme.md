@@ -29,7 +29,7 @@ And that you have done the following.
 2. Connect to your Smart Cluster with kubectl.
 3. Initialize Helm, which you will use for installation.
 
-For more information on these steps, see the VMware Cloud PKS documentation at <https://docs.vmware.com/en/VMware-Cloud-PKS/index.html>.
+For more information on these steps, see the [VMware Cloud PKS documentation](https://docs.vmware.com/en/VMware-Cloud-PKS/index.html).
 
 ---
 ## Step 1: Download and Install Istio
