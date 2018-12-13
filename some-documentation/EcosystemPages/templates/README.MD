@@ -67,4 +67,4 @@ Perhaps you can point to quickstart deployments provided by the highlighted prod
 
 ---
 ## About Ecosystem Solutions for VMware Cloud PKS
-These solutions explain how to install and use some common ecosystem tools on VMware Cloud PKS. For more information, including approved usage, contributions, and other ecosystem solutions, see the [README.MD](../readme.md) file at the top of the repository.
+These solutions explain how to install and use some common ecosystem tools on VMware Cloud PKS. For more information, including approved usage, contributions, and other ecosystem solutions, see the [README.MD](../README.MD) file at the top of the repository.
