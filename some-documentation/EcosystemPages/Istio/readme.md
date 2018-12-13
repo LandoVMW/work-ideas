@@ -299,6 +299,7 @@ You can optionally test your Istio setup using the bookinfo app, which illustrat
 ---
 ## Resources
 - For more information about Istio, see https://istio.io/.
+- For more information about Jaeger, see https://www.jaegertracing.io/.
 - For more information about Kubernetes, see https://kubernetes.io/docs/concepts/.  
 
 ---
