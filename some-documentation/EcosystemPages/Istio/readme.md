@@ -5,7 +5,7 @@ Istio provides a service mesh with multiple components that allow you to manage 
 
 This procedure explains how to configure and install Istio on a new Smart Cluster.
 
-For more information about Istio, see <https://istio.io>.
+For more information about Istio, see <https://istio.io>.  
 
 ### Versions
 This implementation uses the following versions:  
@@ -258,7 +258,6 @@ istio-telemetry-54c4f5cb7-pb65t            2/2       Running     0          5m
 prometheus-76dd6d86b-gxsq7                 1/1       Running     0          5m
 
 ```
-6. You can optionally test your Istio deployment using the bookinfo app, which illustrates many use cases for Istio. For more information, see <https://istio.io/docs/examples/bookinfo/>.
 
 ---
 ## Step 5: (optional) Install Jaeger
@@ -291,8 +290,7 @@ kubectl delete -f yaml/istio.yaml
 ```
 ---
 ## What's Next
-
-**[[[ Summary of what you now have and what you can do with it. Perhaps you can point to quickstart deployments provided by the highlighted product. ]]]**  
+You can optionally test your Istio setup using the bookinfo app, which illustrates many use cases for Istio. For more information, see <https://istio.io/docs/examples/bookinfo/>.
 
 ---
 ## Troubleshooting
@@ -300,7 +298,8 @@ kubectl delete -f yaml/istio.yaml
 
 ---
 ## Resources
-(pointers to other helpful documentation)  
+- For more information about Istio, see https://istio.io/.
+- For more information about Kubernetes, see https://kubernetes.io/docs/concepts/.  
 
 ---
 ## About Ecosystem Solutions for VMware Cloud PKS
