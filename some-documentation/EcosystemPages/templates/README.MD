@@ -63,7 +63,8 @@ Perhaps you can point to quickstart deployments provided by the highlighted prod
 
 ---
 ## Resources
-(pointers to other helpful documentation)  
+- (pointers to other helpful documentation)
+- For more information about Kubernetes, see https://kubernetes.io/docs/concepts/.  
 
 ---
 ## About Ecosystem Solutions for VMware Cloud PKS
