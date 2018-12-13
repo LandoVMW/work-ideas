@@ -29,8 +29,8 @@ And that you have done the following.
 For more information on these steps, see the [VMware Cloud PKS documentation](https://docs.vmware.com/en/VMware-Cloud-PKS/index.html).
 
 ## Steps 
-- [Step 1: Set Up Ingress on Your Smart Cluster](#set-up-ingress-on-your-smart-cluster)
-- [Step 2: Run the JX Installer](#run-the-jx-installer)  
+- [Step 1: Set Up Ingress on Your Smart Cluster](#step-1-set-up-ingress-on-your-smart-cluster)
+- [Step 2: Run the JX Installer](#step-2-run-the-jx-installer)  
 
 ### Step 1: Set Up Ingress on Your Smart Cluster
 1. Download and install the JX tool, which automates the process of deploying Jenkins X on a kubernetes cluster.  
