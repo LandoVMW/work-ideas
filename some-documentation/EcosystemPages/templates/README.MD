@@ -67,4 +67,4 @@ Perhaps you can point to quickstart deployments provided by the highlighted prod
 
 ---
 ## About Ecosystem Solutions for VMware Cloud PKS
-(link back to the top-level page of the 'ecosystem solutions' repository for information about license / user agreement / other legalese / contributions / etc)
+These solutions explain how to install and use some common ecosystem tools on VMware Cloud PKS. For more information, including approved usage, contributions, and other ecosystem solutions, see the [README.MD](../readme.md) file at the top of the repository.
