@@ -10,11 +10,11 @@ For more information about Istio, see <https://istio.io>.
 ### Versions
 This implementation uses the following versions:  
 
-| Software | Version |
-| :------ | ---: |
-| Istio      | 1.0.2 |
-| Kubernetes | 1.10.2-80 |
-| Helm | 2.8.0 |
+| Software    | Version  |           | notes |
+| :------     | ---:     |     ---:  | :---  |
+| Istio       | 1.0.5    | 1.0.2     |       |
+| Kubernetes* | 1.11.5-1 | 1.10.11-1 | running in a Smart Cluster |
+| Helm        | 2.8.0    | 2.8.0     |       |
 
 ### Before You Begin
 This procedure requires that you have a VMware Cloud Services organization with access to the VMware Cloud PKS service.  
@@ -32,7 +32,16 @@ And that you have done the following.
 For more information on these steps, see the [VMware Cloud PKS documentation](https://docs.vmware.com/en/VMware-Cloud-PKS/index.html).
 
 ---
-## Step 1: Download and Install Istio
+## Steps
+- [Step 1: Download and Install Istio](#step-1-download-and-install-istio)
+- [Step 2: Configure the Istio YAML File](#step-2-configure-the-istio-yaml-file)
+- [Step 3: (optional) Configure Istio Components for High Availability](#step-3-optional-configure-istio-components-for-high-availability)
+- [Step 4: Deploy and Verify Your Istio Installation](#step-4-deploy-and-verify-your-istio-installation)
+- [Step 5: (optional) Install Jaeger](#step-5-optional-install-jaeger)
+- [Step 6: (optional) Delete Your Istio Deployment](#step-6-optional-delete-your-istio-deployment)
+
+
+### Step 1: Download and Install Istio
 The Istio download is a compressed directory that contains the YAML files and the ```istioctl``` CLI, along with other tools and samples.
 1. Download the compressed installation directory from <https://istio.io>.  
    Note that this implementation is tested with Istio **1.0.2**.
@@ -44,8 +53,7 @@ For example, on Linux you can use the following commands.
    export PATH=$PWD:$PATH
    ```
 
----
-## Step 2: Configure the Istio YAML File
+### Step 2: Configure the Istio YAML File
 1. In the Istio install directory, create a working directory where you configure your YAML deployment file. For example: 
    ```
    cd <path-to>/istio-1.0.2
@@ -115,8 +123,7 @@ spec:
 
 ```
 
----
-## Step 3: (optional) Configure Istio Components for High Availability
+### Step 3: (optional) Configure Istio Components for High Availability
 You can optionally generate multiple replicas and use ```podAntiAffinity``` to configure Istio for high availability on a *production* Smart Cluster.
 
 The default YAML defines a single replica for each of the control plane components (Pilot, Citadel, and Galley). Update the ```deployment``` spec for each of these components as follows:  
@@ -197,32 +204,31 @@ spec:
 
 ```
 
----
-## Step 4: Deploy and Verify Your Istio Installation
+### Step 4: Deploy and Verify Your Istio Installation
 After you have finished configuring your YAML file, you can deploy Istio.
 
 Make sure you have connected kubectl to your Smart Cluster before proceeding. 
 
 1. Use kubectl to install Istio's custom resource definitions.  
-```
-cd <path-to>/istio-1.0.2
-kubectl apply -f install/kubernetes/helm/istio/templates/crds.yaml
-```  
-Wait a few seconds for the CRDs to be committed in the kube-apiserver before continuing.
+   ```
+   cd <path-to>/istio-1.0.2
+   kubectl apply -f install/kubernetes/helm/istio/templates/crds.yaml
+   ```  
+   Wait a few seconds for the CRDs to be committed in the kube-apiserver before continuing.
 
 2. Create a namespace for Istio.
-```
-kubectl create namespace istio-system 
-```
+   ```
+   kubectl create namespace istio-system 
+   ```
 3. Deploy Istio to your Smart Cluster.
-```
-kubectl apply -f yaml/istio.yaml
-```
+   ```
+   kubectl apply -f yaml/istio.yaml
+   ```
 4. Verify that the necessary services are deployed.
-```
-kubectl get svc -n istio-system
-```
-The resulting output should look something like this.
+   ```
+   kubectl get svc -n istio-system
+   ```
+   The resulting output should look something like this.
 ```
 NAME                       TYPE           CLUSTER-IP   EXTERNAL-IP        PORT(S)                                                                                                                  AGE
 istio-citadel              ClusterIP      10.0.0.93    <none>             8060/TCP,9093/TCP                                                                                                        38s
@@ -239,10 +245,10 @@ prometheus                 ClusterIP      10.0.0.189   <none>             9090/T
 ```
 
 5. Verify that the pods are deployed and the containers are up and running.
-```
-kubectl get pod -n istio-system
-```
-The resulting output should look something like this.
+   ```
+   kubectl get pod -n istio-system
+   ```
+   The resulting output should look something like this.
 ```
 NAME                                        READY     STATUS      RESTARTS   AGE
 istio-citadel-84b7985bf-9xdmt              1/1       Running     0          5m
@@ -259,15 +265,14 @@ prometheus-76dd6d86b-gxsq7                 1/1       Running     0          5m
 
 ```
 
----
-## Step 5: (optional) Install Jaeger
+### Step 5: (optional) Install Jaeger
 Jaegar is a distributed tracing system, used for monitoring microservices-based distributed systems. You can optionally install Jaeger on top of Istio. For more information about Jaeger, see <https://github.com/jaegertracing/jaeger>.
 
 - To install Jaeger after you have installed Istio as described above, use the following command.
-```
-kubectl create -n istio-system -f https://raw.githubusercontent.com/jaegertracing/jaeger-kubernetes/master/all-in-one/jaeger-all-in-one-template.yml
-```
-This YAML creates four services and a deployment extension.
+   ```
+   kubectl create -n istio-system -f https://raw.githubusercontent.com/jaegertracing/jaeger-kubernetes/master/all-in-one/jaeger-all-in-one-template.yml
+   ```
+   This YAML creates four services and a deployment extension.
 ```
 deployment.extensions "jaeger-deployment" created
 service "jaeger-query" created
@@ -277,12 +282,11 @@ service "zipkin" created
 ```
 
 - You can also install Jaeger when you install Istio. When you make a copy of the installation YAML file, add the ```tracing.enabled=true``` flag as shown in the following command. You must then configure the installation YAML file and create the namespace, as described above.
-```
-helm template install/kubernetes/helm/istio --name istio --namespace istio-system --set tracing.enabled=true > yaml/istio.yaml
-```
+   ```
+   helm template install/kubernetes/helm/istio --name istio --namespace istio-system --set  tracing.enabled=true > yaml/istio.yaml
+   ```
 
----
-## Step 6: (optional) Delete Your Istio Deployment
+### Step 6: (optional) Delete Your Istio Deployment
 To uninstall Istio, run the ```kubectl delete``` command in your Istio install directory.
 ```
 cd <path-to>/istio-1.0.2
@@ -292,9 +296,11 @@ kubectl delete -f yaml/istio.yaml
 ## What's Next
 You can optionally test your Istio setup using the bookinfo app, which illustrates many use cases for Istio. For more information, see <https://istio.io/docs/examples/bookinfo/>.
 
+<!--
 ---
 ## Troubleshooting
 (solutions to common issues)  
+-->
 
 ---
 ## Resources
