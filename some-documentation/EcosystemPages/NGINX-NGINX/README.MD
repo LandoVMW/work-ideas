@@ -4,7 +4,7 @@ The procedure in this document describes how to install the NGINX ingress contro
 
 **[[And another paragraph that briefly describes the "Why?" - typical use cases for this product.]]**
 
-*If you want to use the NGINX community version of the ingress controller deployed for high availability in multiple availability zones on a production Smart Cluster, click here.* [[[ZZZZZZZZZZZZ xref here]]]
+*If you want to use the NGINX community version of the ingress controller deployed for high availability in multiple availability zones on a production Smart Cluster, see the [README-HA.MD](./README-HA.MD) file.*
 
 
 ### Versions
@@ -44,7 +44,7 @@ When you install the controller, you must modify the default settings. At a mini
 
 Use the following steps to download the project, modify the ```values.yaml``` file, and deploy the controller.
 
-**Note:** *If you want to use the NGINX community version of the ingress controller deployed for high availability in multiple availability zones on a production Smart Cluster, click here.* [[[ZZZZZZZZZZZZ xref here]]]
+**Note:** *If you want to use the NGINX community version of the ingress controller deployed for high availability in multiple availability zones on a production Smart Cluster, see the [README-HA.MD](./README-HA.MD) file.* 
 
 1. Clone the project into your local work directory.
    ``` 
