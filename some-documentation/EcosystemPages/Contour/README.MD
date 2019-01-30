@@ -8,7 +8,7 @@ This implementation uses the following versions:
 
 | Software    | Version   |            | notes |
 | :------     |      ---: |       ---: | :---  |
-| Contour     | 0.7.0     | 0.7.0      |       |
+| Contour     | 0.8.0     | 0.8.0      |       |
 | Kubernetes* | 1.11.5-1  | 1.10.11-1  | running in a Smart Cluster |
 
 
